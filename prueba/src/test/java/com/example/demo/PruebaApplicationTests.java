@@ -25,12 +25,12 @@ public class PruebaApplicationTests {
 	@Test
 	public void crearUsuarioTest() {
 		Usuario usa =new Usuario();
-		usa.setId(3);
-		usa.setNombre("rvega");
-		usa.setClave(encoder.encode("445"));
+		usa.setId(4);
+		usa.setNombre("kkkk");
+		usa.setClave(encoder.encode("444"));
 		Usuario retorno = repo.save(usa);
 		
 		assertTrue(retorno.getClave().equalsIgnoreCase(usa.getClave()));
-	}
+	} 
 
 }

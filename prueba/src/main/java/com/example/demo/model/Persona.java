@@ -1,18 +1,28 @@
 package com.example.demo.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel("Model User")
 @Entity
 public class Persona {
 
 	@Id
+    @NotNull
+    @ApiModelProperty(value = "the user's id", required = true)
 	private int idPersona;
 
-	@Column(name = "dni", length = 10)
+
+    @NotNull
+    @ApiModelProperty(value = "the user's dni", required = true)
 	private String dni;
-	@Column(name = "nombre", length = 50)
+
+    @NotNull
+    @ApiModelProperty(value = "the user's name", required = true)
 	private String nombre;
 
 	public int getIdPersona() {
