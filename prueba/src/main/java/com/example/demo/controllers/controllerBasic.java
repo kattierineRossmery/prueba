@@ -14,33 +14,34 @@ import com.example.demo.repository.IPersonaRepository;
 @RequestMapping("/hola")
 public class controllerBasic {
 
-	///igorejgierojgoiergj
+	/// igorejgierojgoiergj
 	///
 	//
-	
+
 	@Autowired
 	private IPersonaRepository repo;
-	
-	@GetMapping(path = {"/saludar", "/holamundo"})
-	public String saludar(@RequestParam(name="name",required = false,defaultValue = "World") String name, Model model) {
-		
-		//logica
-		Persona per= new Persona();
+
+	@GetMapping(path = { "/saludar", "/holamundo" })
+	public String saludar(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
+			Model model) {
+
+		// logica
+		Persona per = new Persona();
 		per.setIdPersona(1);
 		per.setDni("12345678");
 		per.setNombre("Rosmery");
 		repo.save(per);
-		
+
 		model.addAttribute("nombre", name);
 		return "index";
 	}
 
-		@GetMapping("/listar")
-		public String listar(Model model){
-				
-				//logica
-			model.addAttribute("personas",repo.findAll());
-				
-				return "index";
-			}
+	@GetMapping("/listar")
+	public String listar(Model model) {
+
+		// logica
+		model.addAttribute("personas", repo.findAll());
+
+		return "index";
+	}
 }
