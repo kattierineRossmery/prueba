@@ -25,6 +25,11 @@ public class SwaggerConfiguration {
 
      */
 
+	/**
+	 * 
+	 * PROBANDO CAMBIOS XDD
+	 * @return
+	 */
     @Bean
     public Docket usersApi() {
 
